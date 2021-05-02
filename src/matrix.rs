@@ -319,10 +319,10 @@ impl<S: BaseFloat> Matrix4<S> {
     pub fn from_translation(v: Vector3<S>) -> Matrix4<S> {
         #[cfg_attr(rustfmt, rustfmt_skip)]
         Matrix4::new(
-            S::one(), S::zero(), S::zero(), S::zero(),
-            S::zero(), S::one(), S::zero(), S::zero(),
-            S::zero(), S::zero(), S::one(), S::zero(),
-            v.x, v.y, v.z, S::one(),
+            S::one(), S::zero(), S::zero(), v.x,
+            S::zero(), S::one(), S::zero(), v.y,
+            S::zero(), S::zero(), S::one(), v.z,
+            S::zero(), S::zero(), S::zero(), S::one(),
         )
     }
 

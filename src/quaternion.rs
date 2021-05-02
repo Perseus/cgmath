@@ -463,9 +463,9 @@ impl<S: BaseFloat> From<Quaternion<S>> for Matrix4<S> {
 
         #[cfg_attr(rustfmt, rustfmt_skip)]
         Matrix4::new(
-            S::one() - yy2 - zz2, xy2 + sz2, xz2 - sy2, S::zero(),
-            xy2 - sz2, S::one() - xx2 - zz2, yz2 + sx2, S::zero(),
-            xz2 + sy2, yz2 - sx2, S::one() - xx2 - yy2, S::zero(),
+            S::one() - yy2 - zz2, xy2 - sz2, xz2 + sy2, S::zero(),
+            xy2+sz2, S::one() - xx2 - zz2, yz2 - sx2, S::zero(),
+            xz2 - sy2, yz2 + sx2, S::one() - xx2 - yy2, S::zero(),
             S::zero(), S::zero(), S::zero(), S::one(),
         )
     }
